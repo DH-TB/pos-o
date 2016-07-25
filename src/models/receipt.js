@@ -1,11 +1,5 @@
 class Receipt {
-  constructor(receiptItems, total, savedTotal) {
-    this.receiptItems = receiptItems;
-    this.total = total;
-    this.savedTotal = savedTotal;
-  }
-
-  static buildReceipt(receiptItems) {
+  constructor(receiptItems = []) {
     let total = 0;
     let savedTotal = 0;
 
@@ -14,9 +8,10 @@ class Receipt {
       savedTotal += receiptItem.saved;
     }
 
-    return new Receipt(receiptItems, total, savedTotal);
+    this.receiptItems = receiptItems;
+    this.total = total;
+    this.savedTotal = savedTotal;
   }
-
 
   buildText() {
     const formatMoney = (money) => {
