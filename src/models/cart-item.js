@@ -16,7 +16,9 @@ class CartItem {
   getPrice(){
     return this.item.price;
   }
-
+  getSubtotal(){
+    return this.count*this.item.price;
+  }
   static buildCartItems(tags, allItems) {
 
     const cartItems = [];
